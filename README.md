@@ -4,9 +4,7 @@ Simple video redaction tool that detects people, faces and other objects using Y
 
 This repository contains two UIs and a backend processing pipeline:
 
-- `redactify-front/` — React + Vite frontend (single-page app) that expects an API backend.
-- `app.py` / `redact_video.py` — Streamlit quick UI and local processing helper for experiments.
-- `redactify-back/` — Backend pieces (model downloader and `redaction_core` processing utilities).
+- `redactify/` — Python pieces (model downloader and `redact video.py and app.py` for processing).
 - `models/` — place model weights (e.g. `yolov9c.pt`, `yolov8n-face.pt`) here.
 
 This README explains how to set up the project, run it locally, and common troubleshooting steps.
@@ -93,18 +91,8 @@ streamlit run app.py
 Notes:
 - Streamlit UI runs processing synchronously by default (the UI waits while `process_video` runs). For long videos prefer the job-based API (see below) or process a short preview with `frame_skip` / `max_frames` to validate config.
 
----
-## Running the React frontend (redactify-front)
 
-The React frontend expects a backend API endpoint (upload → start job or synchronous processing). To run frontend locally:
 
-```bash
-cd redactify-front
-npm install
-npm run dev
-```
-
-If you want to integrate it with the Python backend, implement an HTTP API (Flask / FastAPI) that accepts multipart uploads and returns a job id (recommended) or the processed video directly (blocking).
 
 ---
 ## Recommended way forward (developer notes)

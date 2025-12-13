@@ -13,7 +13,7 @@ WORKDIR /app
 
 # 4. Copy and install dependencies
 # We install the core requirements first
-COPY requirements.txt .
+COPY redactify/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install PyTorch specifically for CPU to keep the image size manageable
@@ -22,13 +22,12 @@ RUN pip install torch==2.0.1 torchvision==0.15.2 --index-url https://download.py
 
 # 5. Copy the rest of the application files
 # This includes app.py, redactify_vid.py, etc.
-COPY . .
-
+COPY redactify/ .
 # 6. Copy the YOLO models into the location your script expects
 # The script looks for models one level up (../models). 
 # We copy them into the container's root working directory /app/models.
 # You MUST ensure your models are in the '../models' folder on your host machine before building!
-COPY ../models /app/models 
+COPY models /app/models 
 
 # 7. Expose the default Streamlit port
 EXPOSE 8501
