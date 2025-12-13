@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Model weights
+*.pt
+
+# OS / editor
+.DS_Store
+.vscode/
+
+# Temp files
+*.mp4
+*.mov
+*.avi
