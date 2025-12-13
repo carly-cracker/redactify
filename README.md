@@ -137,9 +137,3 @@ PRs welcome. Keep changes focused, add tests for processing utilities when possi
 
 This repository does not include a license file. Add an appropriate license (`MIT`, `Apache-2.0`, etc.) if you intend to share this publicly.
 
----
-If you want, I can now:
-- Add a minimal HTTP job API (Flask or FastAPI) and a simple React integration for non-blocking uploads, or
-- Convert `print()` to `logging` throughout the backend and run a small timing test to measure per-frame inference time.
-
-Tell me which you'd prefer as the next step.
