@@ -4,7 +4,7 @@ streamlit
 ultralytics
 torch==2.0.1+cpu
 torchvision==0.15.2+cpu
-opencv-python-headless==4.8.1.78
+opencv-python-headless<4.9
 numpy<2
 tqdm
 requests
